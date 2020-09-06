@@ -24,6 +24,8 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
+/* 925 */ 
+
 ini_set("session.cookie_httponly", 1);
 ini_set("display_errors", 0);
 ini_set("log_errors", 1);
@@ -40,7 +42,7 @@ if (file_exists(getcwd() . "/Core")) {
 }
 
 if (!file_exists(PROJECT_PATH_ROOT . 'vendor/')) {
-    die('<h1>Incomplete installation</h1><p>Ba&iuml;kal dependencies have not been installed. If you are a regular user, this means that you probably downloaded the wrong zip file.</p><p>To install the dependencies manually, execute "<strong>composer install</strong>" in the Ba&iuml;kal root folder.</p>');
+    die('<h1>Incomplete installation</h1><p>925:dav dependencies have not been installed. If you are a regular user, this means that you probably downloaded the wrong zip file.</p><p>To install the dependencies manually, execute "<strong>composer install</strong>" in the 925:dav root folder.</p>');
 }
 
 require PROJECT_PATH_ROOT . 'vendor/autoload.php';
@@ -54,7 +56,7 @@ require PROJECT_PATH_ROOT . 'vendor/autoload.php';
 # Create and setup a page object
 $oPage = new \Flake\Controller\Page(PROJECT_PATH_ROOT . "Core/Resources/Web/Baikal/Templates/Page/index.html");
 $oPage->injectHTTPHeaders();
-$oPage->setTitle("925 dav server");
+$oPage->setTitle("&ovbar; Status | 925:dav");
 $oPage->setBaseUrl(PROJECT_URI);
 
 # Draw page

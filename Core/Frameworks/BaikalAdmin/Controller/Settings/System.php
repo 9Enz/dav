@@ -62,9 +62,9 @@ class System extends \Flake\Core\Controller {
     function render() {
         $oView = new \BaikalAdmin\View\Settings\System();
         $oView->setData("message", \Formal\Core\Message::notice(
-            "Do not change anything on this page unless you really know what you are doing.<br />You might break Baïkal if you misconfigure something here.",
-            "Warning !",
-            false
+            "Do not make changes unless database changes have been implemneted.<br />Misconfiguration of these database settings may result in service interruption.",
+            "Caution",
+            true
         ));
 
         $oView->setData("form", $this->oForm->render());
@@ -124,7 +124,7 @@ class System extends \Flake\Core\Controller {
             }
 
             if (($aMissingTables = \Baikal\Core\Tools::isDBStructurallyComplete($oDB)) !== true) {
-                $sMessage = "<strong>MySQL error:</strong> These tables, required by Baïkal, are missing: <strong>" . implode(", ", $aMissingTables) . "</strong><br />";
+                $sMessage = "<strong>MySQL error:</strong> These tables, required by 925:dav, are missing: <strong>" . implode(", ", $aMissingTables) . "</strong><br />";
                 $sMessage .= "You may want create these tables using the file <strong>Core/Resources/Db/MySQL/db.sql</strong>";
                 $sMessage .= "<br /><br /><strong>Nothing has been saved</strong>";
 
@@ -158,8 +158,8 @@ class System extends \Flake\Core\Controller {
                 if (($aMissingTables = \Baikal\Core\Tools::isDBStructurallyComplete($oDb)) !== true) {
                     $sMessage = "<br /><p><strong>Database is not structurally complete.</strong></p>";
                     $sMessage .= "<p>Missing tables are: <strong>" . implode("</strong>, <strong>", $aMissingTables) . "</strong></p>";
-                    $sMessage .= "<p>You will find the SQL definition of Baïkal tables in this file: <strong>Core/Resources/Db/SQLite/db.sql</strong></p>";
-                    $sMessage .= "<br /><p>Nothing has been saved. <strong>Please, add these tables to the database before pursuing Baïkal initialization.</strong></p>";
+                    $sMessage .= "<p>You will find the SQL definition of 925:dav tables in this file: <strong>Core/Resources/Db/SQLite/db.sql</strong></p>";
+                    $sMessage .= "<br /><p>Nothing has been saved. <strong>Please, add these tables to the database before pursuing 925:dav initialization.</strong></p>";
 
                     $oForm->declareError(
                         $oMorpho->element("sqlite_file"),
@@ -171,7 +171,7 @@ class System extends \Flake\Core\Controller {
             } catch (\Exception $e) {
                 $oForm->declareError(
                     $oMorpho->element("sqlite_file"),
-                        "Baïkal was not able to establish a connexion to the SQLite database as configured.<br />SQLite says: " . $e->getMessage() . (string) $e
+                        "925:dav was not able to establish a connection to the SQLite database as configured.<br />SQLite says: " . $e->getMessage() . (string) $e
                         );
             }
         }

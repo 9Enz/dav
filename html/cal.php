@@ -42,7 +42,7 @@ if (file_exists(getcwd() . "/Core")) {
 }
 
 if (!file_exists(PROJECT_PATH_ROOT . 'vendor/')) {
-    die('<h1>Incomplete installation</h1><p>Ba&iuml;kal dependencies have not been installed. If you are a regular user, this means that you probably downloaded the wrong zip file.</p><p>To install the dependencies manually, execute "<strong>composer install</strong>" in the Ba&iuml;kal root folder.</p>');
+    die('<h1>Incomplete installation</h1><p>925:dav dependencies have not been installed. If you are a regular user, this means that you probably downloaded the wrong zip file.</p><p>To install the dependencies manually, execute "<strong>composer install</strong>" in the 925:dav root folder.</p>');
 }
 
 require PROJECT_PATH_ROOT . 'vendor/autoload.php';
@@ -56,11 +56,11 @@ require PROJECT_PATH_ROOT . 'vendor/autoload.php';
 try {
     $config = Yaml::parseFile(PROJECT_PATH_CONFIG . "baikal.yaml");
 } catch (\Exception $e) {
-    die('<h1>Incomplete installation</h1><p>Ba&iuml;kal is missing its configuration file, or its configuration file is unreadable.');
+    die('<h1>Incomplete installation</h1><p>925:dav is missing its configuration file, or its configuration file is unreadable.');
 }
 
 if (!isset($config['system']["cal_enabled"]) || $config['system']["cal_enabled"] !== true) {
-    throw new ErrorException("Baikal CalDAV is disabled.", 0, 255, __FILE__, __LINE__);
+    throw new ErrorException("925:dav CalDAV is disabled.", 0, 255, __FILE__, __LINE__);
 }
 
 $server = new \Baikal\Core\Server(

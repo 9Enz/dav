@@ -4,16 +4,16 @@
 	.label-intext { vertical-align: top;}
 </style>
 <header class="jumbotron subhead" id="overview">
-	<h1><i class="la la-weight"></i>Dashboard</h1>
+	<h1><i class="la la-weight" style="font-size: 1.2em;position:relative;top:.075em;left:-.15em"></i>Dashboard</h1>
 </header>
 
 <section id="about">
 	<div class="page-header">
-		<h1>About this system</h1>
+		<h2>About this system</h2>
 	</div>
 	<div class="row">
 		<div class="span3">
-			<h2>Version</h2>
+			<h3>Version</h3>
 			<p>This systems runs 925:dav <span class="label label-info label-intext">{{ BAIKAL_VERSION }}</span><br />
 				<small><a href="{{ url }}" target="_blank">{{ url }}</a></small>
 			</p>
@@ -37,7 +37,7 @@
 			</script>
 		</div>
 		<div class="span3">
-			<h2>Services</h2>
+			<h3>Services</h3>
 			{% if cal_enabled %}
 				{% set caldavclass = 'label-success' %}
 				{% set caldavtext = 'On' %}
@@ -57,7 +57,7 @@
 			<table class="table">
 				<tbody>
 					<tr>
-						<td>Web admin</td>
+						<td>Web Admin</td>
 						<td><span class="label label-success label-intext">On</span></p></td>
 					</tr>
 					<tr>
@@ -76,20 +76,20 @@
 			</table>
 		</div>
 		<div class="span6">
-			<h2>License and credits</h2>
+			<h3>License and credits</h3>
 			<p>925:dav is open source software licensed under the terms of the GNU GPL v3.</p>
-			<p>925:dav is based upon Baïkal and other open source projects.</p>
+			<p>The source code is based upon Baïkal and other open source projects.</p>
 		</div>
 	</div>
 </section>
 
 <section id="statistics">
 	<div class="page-header">
-		<h1>Statistics</h1>
+		<h2>Statistics</h2>
 	</div>
 	<div class="row">
 		<div class="span4">
-			<h2>Users</h2>
+			<h3>WebDAV</h3>
 			<table class="table">
 				<tbody>
 					<tr>
@@ -100,7 +100,7 @@
 			</table>
 		</div>
 		<div class="span4">
-			<h2>CalDAV</h2>
+			<h3>CalDAV</h3>
 			<table class="table">
 				<tbody>
 					<tr>
@@ -115,7 +115,7 @@
 			</table>
 		</div>
 		<div class="span4">
-			<h2>CardDAV</h2>
+			<h3>CardDAV</h3>
 			<table class="table">
 				<tbody>
 					<tr>

@@ -13,6 +13,14 @@ body {
 	background-color: rgb(240, 240, 240);
 }
 
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
 table .no-border-left { border-left: none !important;}
 table p {
 	margin-bottom: 0;
@@ -56,12 +64,12 @@ p.lead { line-height: 40px;}
 		letter-spacing: -1px;
 		line-height: 20px;
 	}
-	
+
 	p.lead {
 		font-size: 14px;
 		line-height: 14px;
 	}
-	
+
 	[class^="glyph2x-"],
 	[class*=" glyph2x-"] {
 		display: none;

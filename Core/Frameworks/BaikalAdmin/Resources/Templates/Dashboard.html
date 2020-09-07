@@ -1,10 +1,10 @@
 {% autoescape false %}
-{% set url = 'http://sabre.io/baikal' %}
+{% set url = 'https://dav.925id.org' %}
 <style>
 	.label-intext { vertical-align: top;}
 </style>
 <header class="jumbotron subhead" id="overview">
-	<h1><i class="glyph2x-circle-info"></i>Dashboard</h1>
+	<h1><i class="la la-weight"></i>Dashboard</h1>
 </header>
 
 <section id="about">
@@ -14,7 +14,7 @@
 	<div class="row">
 		<div class="span3">
 			<h2>Version</h2>
-			<p>This systems runs Baïkal <span class="label label-info label-intext">{{ BAIKAL_VERSION }}</span><br />
+			<p>This systems runs 925:dav <span class="label label-info label-intext">{{ BAIKAL_VERSION }}</span><br />
 				<small><a href="{{ url }}" target="_blank">{{ url }}</a></small>
 			</p>
 			<p id="newVersionContainer" style="display: none;">
@@ -45,7 +45,7 @@
 				{% set caldavclass = 'label-important' %}
 				{% set caldavtext = 'Off' %}
 			{% endif %}
-			
+
 			{% if card_enabled %}
 				{% set carddavclass = 'label-success' %}
 				{% set carddavtext = 'On' %}
@@ -53,11 +53,15 @@
 				{% set carddavclass = 'label-important' %}
 				{% set carddavtext = 'Off' %}
 			{% endif %}
-			
+
 			<table class="table">
 				<tbody>
 					<tr>
 						<td>Web admin</td>
+						<td><span class="label label-success label-intext">On</span></p></td>
+					</tr>
+					<tr>
+						<td>WebDAV</td>
 						<td><span class="label label-success label-intext">On</span></p></td>
 					</tr>
 					<tr>
@@ -73,9 +77,8 @@
 		</div>
 		<div class="span6">
 			<h2>License and credits</h2>
-			<p>Baïkal is open source software licensed under the terms of the GNU GPL v3.</p>
-			<p>Baïkal is based upon other open source projects.<br />Read the <a href="https://github.com/sabre-io/Baikal/blob/master/README.md" target="_blank">README.md</a> file to learn about that.</p>
-			<p>Baïkal was created by <a href="https://github.com/jeromeschneider" target="_blank">Jérôme Schneider</a><br />and is now developed by volunteers on <a href="https://github.com/sabre-io/Baikal/" target="_blank">GitHub</a>.
+			<p>925:dav is open source software licensed under the terms of the GNU GPL v3.</p>
+			<p>925:dav is based upon Baïkal and other open source projects.</p>
 		</div>
 	</div>
 </section>

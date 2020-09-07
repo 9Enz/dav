@@ -6,6 +6,6 @@
     "license" : "GPL-3.0",
     "repositories": [{
        "type": "vcs",
-       "url": "https://github.com/myrepo/MyExtension.git"
+       "url": "https://github.com/9enz/dav.git"
 }]
 }

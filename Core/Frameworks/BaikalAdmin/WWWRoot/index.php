@@ -56,7 +56,7 @@ require PROJECT_PATH_ROOT . 'vendor/autoload.php';
 $oPage = new \Flake\Controller\Page(BAIKALADMIN_PATH_TEMPLATES . "Page/index.html");
 $oPage->injectHTTPHeaders();
 
-$oPage->setTitle("Baïkal " . BAIKAL_VERSION . " Web Admin");
+$oPage->setTitle("Web Admin | 925:dav");
 $oPage->setBaseUrl(PROJECT_URI);
 
 if (!\BaikalAdmin\Core\Auth::isAuthenticated()) {

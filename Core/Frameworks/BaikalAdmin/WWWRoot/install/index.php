@@ -62,7 +62,7 @@ require PROJECT_PATH_ROOT . "vendor/autoload.php";
 # Create and setup a page object
 $oPage = new \Flake\Controller\Page(BAIKALADMIN_PATH_TEMPLATES . "Page/index.html");
 $oPage->injectHTTPHeaders();
-$oPage->setTitle("Baïkal Maintainance");
+$oPage->setTitle("Maintainance | 925:dav");
 $oPage->setBaseUrl(PROJECT_URI);
 
 $oPage->zone("navbar")->addBlock(new \BaikalAdmin\Controller\Navigation\Topbar\Install());

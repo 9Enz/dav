@@ -25,5 +25,5 @@
 #  This copyright notice MUST APPEAR in all copies of the script!
 #################################################################
 
-define("BAIKAL_VERSION", "1.0.1");
+define("BAIKAL_VERSION", "1.0.2");
 define("BAIKAL_HOMEPAGE", "http://dav.925id.org/");

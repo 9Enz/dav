@@ -50,7 +50,7 @@ HTML;
         $sClose = "";
 
         if ($sTitle !== "") {
-            $sTitle = '<h4 class="alert-heading">' . $sTitle . '</h4><hr />';
+            $sTitle = '<h4 class="alert-heading">' . $sTitle . '</h4><br />';
         }
 
         if ($bClose === true) {

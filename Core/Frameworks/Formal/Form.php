@@ -109,7 +109,7 @@ class Form {
             $this->sDisplayTitle = "Creating new<i class=" . $this->modelInstance()->mediumicon() . "></i><strong>" . $this->modelInstance()->humanName() . "</strong>";
         } else {
             # This is changed if form is persisted, after persistance, to reflect possible change in model instance label
-            $this->sDisplayTitle = "Editing " . $this->modelInstance()->humanName() . "<i class=" . $this->modelInstance()->mediumicon() . "></i><strong>" . $this->modelInstance()->label() . "</strong>";
+            $this->sDisplayTitle = "Editing " . $this->modelInstance()->humanName() . "<i class=" . $this->modelInstance()->mediumicon() . "></i> <strong>" . $this->modelInstance()->label() . "</strong>";
         }
 
         return $this;

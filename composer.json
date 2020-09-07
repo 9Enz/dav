@@ -1,4 +1,4 @@
-{
+z{
     "name": "9enz/dav",
     "description": "925:dav is a CalDAV + CardDAV server based on PHP, MySQL, and SabreDAV",
     "keywords": ["Framework", "WebDAV", "CalDAV", "CardDAV", "iCalendar"],
@@ -22,7 +22,7 @@
         "friendsofphp/php-cs-fixer": "~2.16.1"
     },
     "replace" : {
-        "jeromeschneider/baikal" : "self.version"
+        "9enz/dav" : "self.version"
     },
     "autoload": {
         "psr-0" : {

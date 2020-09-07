@@ -1,6 +1,12 @@
 {
- "repositories": [{
-    "type": "vcs",
-    "url": "https://github.com/myrepo/MyExtension.git"
+    "name": "9enz/dav",
+    "description": "925:dav is a CalDAV + CardDAV server based on PHP, MySQL, and SabreDAV",
+    "keywords": ["Framework", "WebDAV", "CalDAV", "CardDAV", "iCalendar"],
+    "homepage": "http://dav.925id.org/",
+    "license" : "GPL-3.0",
+    "version_normalized":"0000001-dev",
+    "repositories": [{
+       "type": "vcs",
+       "url": "https://github.com/myrepo/MyExtension.git"
 }]
 }

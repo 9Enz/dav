@@ -44,7 +44,7 @@ class AddressBook extends \Flake\Core\Model\Db {
     }
 
     static function icon() {
-        return "icon-book";
+        return "la la-address-card";
     }
 
     static function mediumicon() {

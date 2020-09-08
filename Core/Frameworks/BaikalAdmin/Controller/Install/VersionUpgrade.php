@@ -47,19 +47,19 @@ class VersionUpgrade extends \Flake\Core\Controller {
             error_log('Error reading baikal.yaml file : ' . $e->getMessage());
         }
 
-        $sBigIcon = "glyph2x-magic";
+        $sBigIcon = "la la-tasks";
         $sBaikalVersion = BAIKAL_VERSION;
         $sBaikalConfiguredVersion = $config['system']['configured_version'];
 
         if ($config['system']['configured_version'] === BAIKAL_VERSION) {
             $sMessage = "Your system is configured to use version <strong>" . $sBaikalConfiguredVersion . "</strong>.<br />There's no upgrade to be done.";
         } else {
-            $sMessage = "Upgrading Baïkal from version <strong>" . $sBaikalConfiguredVersion . "</strong> to version <strong>" . $sBaikalVersion . "</strong>";
+            $sMessage = "Upgrading 925:dav from version <strong>" . $sBaikalConfiguredVersion . "</strong> to version <strong>" . $sBaikalVersion . "</strong>";
         }
 
         $sHtml = <<<HTML
 <header class="jumbotron subhead" id="overview">
-	<h1><i class="{$sBigIcon}"></i>Baïkal upgrade wizard</h1>
+	<h1><i class="{$sBigIcon}" style="font-size: 1.2em;position:relative;top:.075em;left:-.15em"></i> 925:dav Upgrade Workflow</h1>
 	<p class="lead">{$sMessage}</p>
 </header>
 HTML;
@@ -80,9 +80,9 @@ HTML;
         }
 
         if ($bSuccess === false) {
-            $sHtml .= "<p>&nbsp;</p><p><span class='label label-important'>Error</span> Baïkal has not been upgraded. See the section 'Errors' for details.</p>";
+            $sHtml .= "<p>&nbsp;</p><p><span class='label label-important'>Error</span> 925:dav has not been upgraded. See the section 'Errors' for details.</p>";
         } else {
-            $sHtml .= "<p>&nbsp;</p><p>Baïkal has been successfully upgraded. You may now <a class='btn btn-success' href='" . PROJECT_URI . "admin/'>Access the Baïkal admin</a></p>";
+            $sHtml .= "<p>&nbsp;</p><p>925:dav has been successfully upgraded. You may now <a class='btn btn-success' href='" . PROJECT_URI . "admin/'>Access the 925:dav admin panel</a>.</p>";
         }
 
         return $sHtml;
@@ -90,7 +90,7 @@ HTML;
 
     protected function upgrade($sVersionFrom, $sVersionTo) {
         if (version_compare($sVersionFrom, '0.2.3', '<=')) {
-            throw new \Exception('This version of Baikal does not support upgrading from version 0.2.3 and older. Please request help on Github if this is a problem.');
+            throw new \Exception('This version of 925:dav does not support upgrading from version 0.2.3 and older. Please request help on Github if this is a problem.');
         }
 
         $this->assertConfigWritable();

@@ -49,7 +49,7 @@ class UpgradeConfirmation extends \Flake\Core\Controller {
             if (isset($config['system']['configured_version'])) {
                 $oldVersion = $config['system']['configured_version'];
             }
-            $sMessage = "Upgrading Baïkal from version <strong>$oldVersion</strong> to version <strong>" . BAIKAL_VERSION . "</strong>";
+            $sMessage = "Upgrading 925:dav from version <strong>$oldVersion</strong> to version <strong>" . BAIKAL_VERSION . "</strong>";
         }
 
         $oView->setData("message", $sMessage);

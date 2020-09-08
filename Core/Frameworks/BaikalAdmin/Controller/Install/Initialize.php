@@ -37,7 +37,7 @@ class Initialize extends \Flake\Core\Controller {
 
         if (!file_exists(PROJECT_PATH_SPECIFIC) || !is_dir(PROJECT_PATH_SPECIFIC) || !is_writable(PROJECT_PATH_SPECIFIC) || !file_exists(PROJECT_PATH_CONFIG) || !is_dir(PROJECT_PATH_CONFIG) || !is_writable(PROJECT_PATH_CONFIG)) {
             $message = "<h1>Error - Insufficient  permissions on the configuration folders</h1><p>";
-            $message .= "<p>In order to work properly, Baïkal needs to have write permissions in the <strong>Specific/</strong> and <strong>config/</strong> folder.</p>";
+            $message .= "<p>In order to work properly, 925:dav needs to have write permissions in the <strong>Specific/</strong> and <strong>config/</strong> folder.</p>";
 
             die($message);
         }
@@ -103,7 +103,7 @@ class Initialize extends \Flake\Core\Controller {
             \Flake\Util\Tools::redirect($sLink);
             exit(0);
 
-        #$sMessage = "<p>Baïkal is now configured. You may <a class='btn btn-success' href='" . PROJECT_URI . "admin/'>Access the Baïkal admin</a></p>";
+        #$sMessage = "<p>925:dav is now configured. You may <a class='btn btn-success' href='" . PROJECT_URI . "admin/'>Access the 925:dav admin panel</a>.</p>";
             #$sForm = "";
         } else {
             $sMessage = "";

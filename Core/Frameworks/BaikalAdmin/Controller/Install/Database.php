@@ -80,9 +80,9 @@ class Database extends \Flake\Core\Controller {
         $oView->setData("baikalversion", BAIKAL_VERSION);
 
         if ($this->oForm->persisted()) {
-            $sMessage = "<p>Baïkal is now installed, and its database properly configured. <strong>For security reasons, this installation wizard is now disabled.</strong></p>";
+            $sMessage = "<p>925:dav is now installed, and its database properly configured. <strong>For security reasons, this installation wizard is now disabled.</strong></p>";
             $sMessage . "<p>&nbsp;</p>";
-            $sMessage .= "<p><a class='btn btn-success' href='" . PROJECT_URI . "admin/'>Start using Baïkal</a></p>";
+            $sMessage .= "<p><a class='btn btn-success' href='" . PROJECT_URI . "admin/'>Start using 925:dav</a></p>";
             $sForm = "";
         } else {
             $sMessage = "";
@@ -121,8 +121,8 @@ class Database extends \Flake\Core\Controller {
                     if (count($aRequiredTables) !== count($aMissingTables)) {
                         $sMessage = "<br /><p><strong>Database is not structurally complete.</strong></p>";
                         $sMessage .= "<p>Missing tables are: <strong>" . implode("</strong>, <strong>", $aMissingTables) . "</strong></p>";
-                        $sMessage .= "<p>You will find the SQL definition of Baïkal tables in this file: <strong>Core/Resources/Db/MySQL/db.sql</strong></p>";
-                        $sMessage .= "<br /><p>Nothing has been saved. <strong>Please, add these tables to the database before pursuing Baïkal initialization.</strong></p>";
+                        $sMessage .= "<p>You will find the SQL definition of 925:dav tables in this file: <strong>Core/Resources/Db/MySQL/db.sql</strong></p>";
+                        $sMessage .= "<br /><p>Nothing has been saved. <strong>Please, add these tables to the database before pursuing 925:dav initialization.</strong></p>";
 
                         $oForm->declareError(
                             $oMorpho->element("mysql"),
@@ -130,7 +130,7 @@ class Database extends \Flake\Core\Controller {
                         );
                     } else {
                         # All tables are missing
-                        # We add these tables ourselves to the database, to initialize Baïkal
+                        # We add these tables ourselves to the database, to initialize 925:dav
                         $sSqlDefinition = file_get_contents(PROJECT_PATH_CORERESOURCES . "Db/MySQL/db.sql");
                         $oDb->query($sSqlDefinition);
                     }
@@ -139,7 +139,7 @@ class Database extends \Flake\Core\Controller {
                 return true;
             } catch (\Exception $e) {
                 $oForm->declareError($oMorpho->element("mysql"),
-                    "Baïkal was not able to establish a connexion to the MySQL database as configured.<br />MySQL says: " . $e->getMessage());
+                    "925:dav was not able to establish a connexion to the MySQL database as configured.<br />MySQL says: " . $e->getMessage());
                 $oForm->declareError($oMorpho->element("mysql_host"));
                 $oForm->declareError($oMorpho->element("mysql_dbname"));
                 $oForm->declareError($oMorpho->element("mysql_username"));
@@ -174,8 +174,8 @@ class Database extends \Flake\Core\Controller {
                     if (count($aRequiredTables) !== count($aMissingTables)) {
                         $sMessage = "<br /><p><strong>Database is not structurally complete.</strong></p>";
                         $sMessage .= "<p>Missing tables are: <strong>" . implode("</strong>, <strong>", $aMissingTables) . "</strong></p>";
-                        $sMessage .= "<p>You will find the SQL definition of Baïkal tables in this file: <strong>Core/Resources/Db/SQLite/db.sql</strong></p>";
-                        $sMessage .= "<br /><p>Nothing has been saved. <strong>Please, add these tables to the database before pursuing Baïkal initialization.</strong></p>";
+                        $sMessage .= "<p>You will find the SQL definition of 925:dav tables in this file: <strong>Core/Resources/Db/SQLite/db.sql</strong></p>";
+                        $sMessage .= "<br /><p>Nothing has been saved. <strong>Please, add these tables to the database before pursuing 925:dav initialization.</strong></p>";
 
                         $oForm->declareError(
                             $oMorpho->element("sqlite_file"),
@@ -183,7 +183,7 @@ class Database extends \Flake\Core\Controller {
                         );
                     } else {
                         # All tables are missing
-                        # We add these tables ourselves to the database, to initialize Baïkal
+                        # We add these tables ourselves to the database, to initialize 925:dav
                         $sSqlDefinition = file_get_contents(PROJECT_PATH_CORERESOURCES . "Db/SQLite/db.sql");
                         foreach (explode(';', $sSqlDefinition) as $query) {
                             if (!trim($query)) {
@@ -198,7 +198,7 @@ class Database extends \Flake\Core\Controller {
             } catch (\Exception $e) {
                 $oForm->declareError(
                     $oMorpho->element("sqlite_file"),
-                    "Baïkal was not able to establish a connexion to the SQLite database as configured.<br />SQLite says: " . $e->getMessage() . (string) $e
+                    "925:dav was not able to establish a connexion to the SQLite database as configured.<br />SQLite says: " . $e->getMessage() . (string) $e
                 );
             }
             // SQLite

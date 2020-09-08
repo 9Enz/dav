@@ -25,7 +25,7 @@
 			<script type="text/javascript">
 				window.onload = function () {
 					jQuery.ajax({
-						url: "https://api.github.com/repos/sabre-io/Baikal/releases/latest",
+						url: "https://api.github.com/repos/9enz/dav/releases/latest",
 						success: function(result) {
 							if (result.name != "{{ BAIKAL_VERSION }}") {
 								$("#newVersion").text(result.name);

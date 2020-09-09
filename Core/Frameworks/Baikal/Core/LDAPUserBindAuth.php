@@ -12,7 +12,7 @@ class LDAPUserBindAuth extends AbstractExternalAuth {
 
     /**
      * AccountValues for getAccountValues
-     * 
+     *
      * @var array ('displayname' => string, 'email' => string)
      */
     private $accountValues;
@@ -33,14 +33,14 @@ class LDAPUserBindAuth extends AbstractExternalAuth {
         if (!ldap_set_option($conn,LDAP_OPT_PROTOCOL_VERSION,3))
           return false;
 
-        /* bind with user 
+        /* bind with user
          * error_handler have to change, because a failed bind raises an error
          * this raise a secuity issue because in the stack trace is the password of user readable
          */
         $arr = explode('@', $username, 2);
         $dn = str_replace('%n', $username, BAIKAL_DAV_LDAP_DN_TEMPLATE);
         $dn = str_replace('%u', $arr[0], $dn);
-        if(isset($arr[1])) $dn = str_replace('%d', $arr[1], $dn);         
+        if(isset($arr[1])) $dn = str_replace('%d', $arr[1], $dn);
 
         set_error_handler("\Baikal\Core\LDAPUserBindAuth::exception_error_handler");
         $bind = ldap_bind($conn, $dn, $password);

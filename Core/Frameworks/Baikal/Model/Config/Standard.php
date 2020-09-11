@@ -51,9 +51,25 @@ class Standard extends \Baikal\Model\Config {
             "type"    => "string",
             "comment" => "HTTP authentication type for WebDAV; default Digest"
         ],
+        "BAIKAL_DAV_LDAP_URI" => [
+            "type" => "string",
+            "comment" => "URI to LDAP Server (for ldap-userbind auth); default ldapi:///"
+        ],
+        "BAIKAL_DAV_LDAP_DN_TEMPLATE" => [
+            "type" => "string",
+            "comment" => "User DN for bind; with replacments %n => username, %u => user part, %d => domain part of username"
+        ],
+        "BAIKAL_DAV_LDAP_DISPLAYNAME_ATTR" => [
+            "type" => "string",
+            "comment" => "LDAP-attribute for displayname; default cn"
+        ],
+        "BAIKAL_DAV_LDAP_EMAIL_ATTR" => [
+            "type" => "string",
+            "comment" => "LDAP-attribute for email; default mail"
+        ],
         "admin_passwordhash" => [
             "type"    => "string",
-            "comment" => "Baïkal Web admin password hash; Set via Baïkal Web Admin",
+            "comment" => "925:dav Web admin password hash; Set via 925:dav Web Admin",
         ]
     ];
 
@@ -103,7 +119,31 @@ class Standard extends \Baikal\Model\Config {
         $oMorpho->add(new \Formal\Element\Listbox([
             "prop"    => "dav_auth_type",
             "label"   => "WebDAV authentication type",
-            "options" => ["Digest", "Basic", "Apache"]
+            "options" => ["Digest", "Basic", "LDAP-UserBind"]
+        ]));
+
+        $oMorpho->add(new \Formal\Element\Text([
+            "prop"  => "BAIKAL_DAV_LDAP_URI",
+            "label" => "LDAP URI"
+        ]));
+
+        $oMorpho->add(new \Formal\Element\Text([
+            "prop"    => "BAIKAL_DAV_LDAP_DN_TEMPLATE",
+            "label"   => "LDAP DN template",
+            "popover" => [
+                "title"   => "posible placeholder",
+                "content" => "<strong>%n</strong> - username<br /><strong>%u</strong> - user part of username , when it is an email address)<br /><strong>%d</strong> - domain part",
+            ]
+        ]));
+
+        $oMorpho->add(new \Formal\Element\Text([
+            "prop"  => "BAIKAL_DAV_LDAP_DISPLAYNAME_ATTR",
+            "label" => "LDAP attribute for DisplayName"
+        ]));
+
+        $oMorpho->add(new \Formal\Element\Text([
+            "prop"  => "BAIKAL_DAV_LDAP_EMAIL_ATTR",
+            "label" => "LDAP attribute for eMail"
         ]));
 
         $oMorpho->add(new \Formal\Element\Password([
@@ -136,7 +176,7 @@ class Standard extends \Baikal\Model\Config {
     }
 
     function label() {
-        return "Baïkal Settings";
+        return "925:dav Settings";
     }
 
     function set($sProp, $sValue) {
